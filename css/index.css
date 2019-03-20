@@ -273,7 +273,7 @@ td {
 }
 .contact {
   /* Style the submit button with a specific background color etc */
-  /* When moving the mouse over the submit button, add a darker green color */
+  /* When moving the mouse over the submit button, add my secondary-color */
 }
 .contact nput[type=text],
 .contact select,
