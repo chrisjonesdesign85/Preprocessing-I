@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,25 +92,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,10 +137,250 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
+	.myFont; //here I used font stack variable
+
 }
 
+
+/*** MY LESS CODE BEGINS HERE ***/
+
+/*** Variables ***/
+@main-color: #008cff;
+@secondary-color: #6D6D6D;
+@nav-link-color: #fff;
+
+.myFont {
+	font-family: 'Roboto Mono', 'monospace';
+	font-weight: 500;
+	font-style: norma;
+}
+
+
+/*** Mixins ***/
+.border {
+	border-top: solid 6px @main-color;
+}
+
+.header-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.make-responsive {
+	width: 100%;
+	height: auto;
+	min-width: 175px;
+}
+
+//Normal CSS
+a {
+	color: @main-color;
+
+	a:hover {
+		color: @secondary-color;
+	}
+
+	//Here i used nesting for my link styles
+}
+
+
+
+.fab {
+	color: @main-color;
+	font-size: 2.5rem;
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+	padding-bottom: 10px;
+}
+
+h1 {
+	font-size: 32px;
+	color: @main-color;
+}
+
+.me {
+	border-radius: 50%;
+	padding-bottom: 25px;
+	.make-responsive();
+
+}
+
+nav {
+	.border(); //here I used my mixin
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+	background-color: #eee;
+	align-items: center;
+}
+
+nav a {
+	color: @nav-link-color;
+	text-decoration: none;
+	padding-left: 20px;
+	text-align: center;
+	padding: 14px;
+
+}
+
+nav a:hover {
+	text-decoration: overline;
+	color: rgba(255, 255, 255, 0.418);
+}
+
+// sticky nav
+.fixed-nav-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 50px;
+	background-color: @main-color;
+}
+
+.container {
+	width: 60%;
+	padding: 25px;
+	padding-top: 0px;
+	margin: 0 auto;
+}
+
+header {
+	height: 100vh;
+	padding: 20px;
+	.header-flex(); // here i made a mixin for the flex properties for the header!
+
+}
+
+.header-text {
+	padding: 20px;
+
+}
+
+.header-p {
+	color: @secondary-color;
+}
+
+.main {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.intro {
+	width: 50%;
+	margin: none;
+	padding-right: 25px;
+	margin-bottom: 100px;
+
+}
+
+.skills {
+	width: 50%;
+	padding: 0;
+}
+
+// Start Progress Bar Styles
+progress {
+	border: none;
+	width: 100%;
+	height: 20px;
+	background: crimson;
+	margin-bottom: 10px;
+}
+
+
+
+progress::-webkit-progress-value {
+	background: @main-color;
+}
+
+progress::-moz-progress-bar {
+	background: @secondary-color;
+}
+
+// End Progress bar Styles
+
+
+section.work {
+	margin-bottom: 100px;
+}
+
+table,
+th,
+td {
+	border: 1px solid @secondary-color;
+	border-collapse: collapse;
+	padding: 15px;
+	text-align: left;
+	border-spacing: 5px;
+}
+
+
+.contact {
+
+	nput[type=text],
+	select,
+	textarea {
+		width: 100%;
+		/* Full width */
+		padding: 12px;
+		/* Some padding */
+		border: 1px solid @secondary-color;
+		/* Gray border */
+		border-radius: 4px;
+		/* Rounded borders */
+		box-sizing: border-box;
+		/* Make sure that padding and width stays in place */
+		margin-top: 6px;
+		/* Add a top margin */
+		margin-bottom: 16px;
+		/* Bottom margin */
+		resize: vertical
+			/* Allow the user to vertically resize the textarea (not horizontally) */
+	}
+
+	/* Style the submit button with a specific background color etc */
+	input[type=submit] {
+		background-color: @main-color;
+		color: white;
+		padding: 12px 20px;
+		margin-bottom: 25px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	/* When moving the mouse over the submit button, add my secondary-color */
+	input[type=submit]:hover {
+		background-color: @secondary-color;
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+
+//mobile styles
+@media(max-width: 500px) {
+	padding: 10px;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

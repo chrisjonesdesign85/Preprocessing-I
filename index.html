@@ -1,12 +1,20 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>My Resume</title>
+  <title>Chris Jones Resume</title>
 
   <link rel="stylesheet" href="css/index.css">
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+
+
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -14,6 +22,107 @@
 </head>
 
 <body>
-  <h1>My Resume</h1>
+  <div class="container">
+    <nav class="fixed-nav-bar">
+      <a href="#">intro</a>
+      <a href="#">skills</a>
+      <a href="#">work</a>
+      <a href="#">contact</a>
+    </nav>
+
+    <header>
+      <div class="header-img">
+        <img class="me" src="/img/Chris1.jpg" alt="Image of Chris Jones">
+      </div>
+
+      <div class="header-text">
+        <h1>Chris Jones</h1>
+        <h1>Full Stack Web Developer</h1>
+        <p class="header-p">Current Lambda School Student</p>
+      </div>
+
+    </header><!-- end header -->
+
+
+    <section class="main">
+      <div class="intro">
+        <h1>Intro</h1><br><br>
+        <p>I am a self-taught programmer/coder living in Knoxville, TN. I learned how to code through hard work and
+          dedication. I made the decision to teach myself to code when I decided I wanted a better future for myself.
+          Through a lot of persistence and discipline I taught myself HTML, CSS, Bootstrap and some JavaScript using
+          paid
+          online courses on Udemy and a site known as Codecademy.<br><br> I am now currently a student at Lambda School
+          for
+          Full
+          Stack Web development I want to go on to learn AngularJS, NodeJS basic PHP and MYSQL. I am also well versed
+          with digital design and overall design concepts, and know my way around Adobe Design programs specifically
+          Adobe Photoshop and Adobe Illustrator.</p>
+      </div><!-- end intro -->
+
+      <div class="skills">
+        <h1>Skills</h1><br><br>
+        <i class="fab fa-html5"></i>
+        <progress max="100" value="90"></progress><br>
+        <i class="fab fa-css3"></i>
+        <progress max="100" value="80"></progress><br>
+        <i class="fab fa-js-square"></i>
+        <progress max="100" value="50"></progress><br>
+        <i class="fab fa-less"></i>
+        <progress max="100" value="20"></progress><br>
+      </div><!-- end skills -->
+
+    </section><!-- end main -->
+
+
+    <section class="work">
+      <h1>Work History</h1><br><br>
+      <table style="width:100%">
+        <tr>
+          <th><strong>Company</strong></th>
+          <th><strong>Title</strong></th>
+          <th><strong>Tech Used</strong></th>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>Software Engineer</td>
+          <td>HTML5, CSS3, JS, Git</td>
+        </tr>
+        <tr>
+          <td>Microsoft</td>
+          <td>Software Engineer</td>
+          <td>HTML5, CSS3, JS, Git</td>
+        </tr>
+      </table>
+      <br>
+      <div class="portfolio-link">
+        Click <a href="https://portfolio.chrisjones.design"> here</a> to go to my Portfolio
+      </div>
+    </section><!-- end work -->
+
+
+    <section class="contact">
+      <h1>Contact Me</h1><br><br>
+      <form name="contact" method="POST" data-netlify="true">
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <br><br>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+
+    </section><!-- end contact -->
+    <footer>
+      <p>Copyright &copy; Chris Jones DSGN 2019</p>
+    </footer><!-- end footer -->
+
+
+
+  </div><!-- end container -->
 </body>
+
 </html>
